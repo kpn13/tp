@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -29,6 +30,14 @@ class Author
      * @var string
      *
      * @ORM\Column(name="firstname", type="string", length=100, nullable=false)
+     * @ApiProperty(
+     *     attributes={
+     *         "openapi_context"={
+     *             "type"="string",
+     *             "example"="Harlan"
+     *         }
+     *     }
+     * )
      */
     private string $firstname;
 
@@ -36,6 +45,14 @@ class Author
      * @var string
      *
      * @ORM\Column(name="lastname", type="string", length=100, nullable=false)
+     * @ApiProperty(
+     *     attributes={
+     *         "openapi_context"={
+     *             "type"="string",
+     *             "example"="Coben"
+     *         }
+     *     }
+     * )
      */
     private string $lastname;
 
