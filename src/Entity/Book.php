@@ -61,6 +61,7 @@ class Book
      * @var Author
      * @ORM\ManyToOne(targetEntity="Author", inversedBy="books")
      * @ORM\JoinColumn(name="author_id", referencedColumnName="id")
+     * @ApiSubresource
      * @ApiProperty(
      *     attributes={
      *         "openapi_context"={
