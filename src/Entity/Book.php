@@ -66,7 +66,7 @@ class Book
      *     attributes={
      *         "openapi_context"={
      *             "type"="string",
-     *             "example"="/api/authors/5"
+     *             "example"="/api/authors/1"
      *         }
      *     }
      * )
