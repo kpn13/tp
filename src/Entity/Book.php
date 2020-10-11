@@ -4,17 +4,23 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use ApiPlatform\Core\Annotation\ApiFilter;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiResource;
 use ApiPlatform\Core\Annotation\ApiSubresource;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter;
 
 /**
  * Book.
  *
- * @ORM\Table(name="book")
+ * @ORM\Table(name="book", uniqueConstraints={@ORM\UniqueConstraint(name="title", columns={"title"})})
  * @ORM\Entity
  * @ApiResource()
+ * @ApiFilter(
+ *     SearchFilter::class,
+ *     properties={"title" : "partial", "author" : "exact"}
+ * )
  */
 class Book
 {
